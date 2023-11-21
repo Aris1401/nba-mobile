@@ -1,0 +1,8 @@
+{
+  "name": "NBAMobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite",
+  "id": "b6dcfd31"
+}
