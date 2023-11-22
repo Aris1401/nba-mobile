@@ -6,7 +6,7 @@ interface SimpleJoueur {
 
 const StatistiqueSimpleJoueur : React.FC<SimpleJoueur> = ({ idJoueur }) => {
   return (
-    
+    <div></div>
   )
 }
 
