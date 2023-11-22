@@ -41,8 +41,8 @@ const App: React.FC = () => {
             </Route>
             { Routes.map((route, index) => {
               return (
-                <Route path={ `/${ route.name }`} exact={true}>
-                  <route.component />
+                <Route path={ route.path } exact={true}>
+                  <route.component name={ route.name } />
                 </Route>
               )
             }) }

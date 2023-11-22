@@ -1,11 +1,12 @@
-import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonItem, IonList, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent, IonHeader, IonItem, IonList, IonMenuButton, IonNavLink, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import { useParams } from 'react-router';
 import ExploreContainer from '../../components/ExploreContainer';
 import { useState } from 'react';
+import EquipeListItem from './components/EquipeListItem';
+import { PageProps } from '../../components/PageProps';
+import Equipes from '../Equipes/Equipes';
 
-const Home: React.FC = () => {
-  const { name } = useParams<{ name: string; }>();
-
+const Home: React.FC<PageProps> = ({ name } : PageProps) => {
     // Equipes
     const [ equipes, setEquipes ] = useState([{nom: 'Lakers'}, {nom: 'Golden States'}])
 
@@ -37,11 +38,11 @@ const Home: React.FC = () => {
             <IonCardContent>
                 <IonList>
                     { equipes.map(( equipe, index ) => {
-                        return <IonItem>{ equipe.nom }</IonItem>;
+                        return <EquipeListItem nom={ equipe.nom } />
                     }) }
                 </IonList>
 
-                <IonButton color={'primary'} expand='block'>Afficher plus</IonButton>
+                <IonButton color='dark' expand='block' routerLink='/Equipes' routerDirection='forward'>Afficher plus</IonButton>
             </IonCardContent>
         </IonCard>
       </IonContent>
